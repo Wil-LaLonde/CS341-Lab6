@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab6Starter;
-
+﻿namespace Lab6Starter;
 /**
- * 
- * Name: 
- * Date:
- * Description:
- * Bugs:
- * Reflection: The most important bit ...
- * 
- */
+* 
+* Name: Wil LaLonde &
+* Date: 11/1/2022
+* Description: Lab6
+* Bugs:
+* Reflection: ->
+* Wil LaLonde: I thought it was interesting getting some more experience with Git.
+*              I've never really forked a repo before so this was something new to me.
+*              Working with the code was interesting as well. It was also a challenge
+*              to try and understand what was going on and try to fix various bugs
+*              as well.
+* 
+*/
 
 /// <summary>
 /// The model class for TicTacToe
 /// </summary>
-internal class TicTacToeGame
-{
+internal class TicTacToeGame {
     internal const int GRID_SIZE = 3;
     Player[,] grid = new Player[GRID_SIZE, GRID_SIZE];
     int[] scores = { 0, 0 };
@@ -28,30 +25,24 @@ internal class TicTacToeGame
     /// <summary>
     /// The player about to make a move
     /// </summary>
-    public Player CurrentPlayer
-    {
+    public Player CurrentPlayer {
         get;
         set;
     }
 
     // can access TicTacToeGame instance using [ , ]
-    public Player this[int row, int col]
-    {
+    public Player this[int row, int col] {
         get => grid[row, col];
-        set
-        {
+        set {
             grid[row, col] = value;
-
         }
     }
 
     /// <summary>
     /// Access to X's score
     /// </summary>
-    public int XScore
-    {
-        get
-        {
+    public int XScore {
+        get {
             return scores[(int)Player.X];
         }
         set {
@@ -62,10 +53,8 @@ internal class TicTacToeGame
     /// <summary>
     /// Access to Y's score
     /// </summary>
-    public int OScore
-    {
-        get
-        {
+    public int OScore {
+        get {
             return scores[(int)Player.O];
         }
         set {
@@ -76,8 +65,7 @@ internal class TicTacToeGame
     /// <summary>
     /// Resets the game
     /// </summary>
-    public TicTacToeGame()
-    {
+    public TicTacToeGame() {
         ResetGame();
     }
 
