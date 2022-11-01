@@ -1,13 +1,15 @@
 ﻿namespace Lab6Starter;
+
+using AndroidX.Core.View.Accessibility;
 /**
- * 
- * Name: 
- * Date: How about this?
- * Description:
- * Bugs:
- * Reflection:
- * 
- */
+* 
+* Name: 
+* Date: How about this?
+* Description:
+* Bugs:
+* Reflection:
+* 
+*/
 
 using Lab6Starter;
 
@@ -58,6 +60,7 @@ public partial class MainPage : ContentPage
 
         if (gameOver)
         {
+
             CelebrateVictory(victor);
 
         }
@@ -97,6 +100,13 @@ public partial class MainPage : ContentPage
     private void CelebrateVictory(Player victor)
     {
         //MessageBox.Show(Application.Current.MainWindow, String.Format("Congratulations, {0}, you're the big winner today", victor.ToString()));
+        if(victor == Player.X) {
+            VictorLabel.Text = "Player X wins!";
+            ticTacToe.XScore += 1;
+        } else {
+            VictorLabel.Text = "Player O wins!";
+            ticTacToe.OScore += 1;
+        }
         XScoreLBL.Text = String.Format("X's Score: {0}", ticTacToe.XScore);
         OScoreLBL.Text = String.Format("O's Score: {0}", ticTacToe.OScore);
 
@@ -118,8 +128,4 @@ public partial class MainPage : ContentPage
         Tile21.Text = "";
         Tile22.Text = "";
     }
-
 }
-
-
-
